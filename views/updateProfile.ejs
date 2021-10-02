@@ -1,0 +1,79 @@
+<%- include("partials/header1"); -%>
+
+<center><h3>Update Profile</h3></center>
+<div class="form-1">
+
+  <form class="" action="/background" method="post">
+    <div class="form-group">
+      <label for="postTitle">Background</label>
+      <br>
+
+      <% if(back==''){ %>
+        <div>
+            <input type="text" class="form-control" name="background" required>
+            <button type="submit" name="button" class="btn">Send</button>
+        </div>
+      <% }else{ %>
+        <div>
+            <table>
+              <tr>
+                <td><p><%= back %></p></td>
+                <td><button class="btn-cross back" type="button" name="button">&#10006;</button></td>
+              </tr>
+            </table>           
+        </div>
+      <%}%>
+    </div>
+  </form>
+
+
+  <form class="" action="/publications" method="post">
+    <div class="form-group" id="pub">
+        <label for="postTitle">Publication</label>
+        <br>
+        <% if(pub.length>0){ %>
+          <% pub.forEach(function(item){ %>
+            <table>
+              <tr>
+                <td class="nr"><p><%= item %></p></td>
+                <td><button class="btn-cross pub" type="button" name="button">&#10006;</button></td>
+              </tr>
+            </table>
+          <% }); %>
+        <% } %>              
+    </div>
+
+    <div class="form-group">
+        <button class="new-1" type="button">+</button>
+    </div>
+    <div class="form-group">
+      <button type="submit" name="button" class="btn send-1 hidden">Send</button>
+    </div>
+  </form>
+
+
+  <form class="" action="/courses" method="post">
+    <div class="form-group" id="course">
+        <label for="postTitle">Courses Taught</label>
+        <br>
+        <% courses.forEach(function(item){ %>
+          <table>
+            <tr>
+              <td class="nr"><p><%= item %></p></td>
+              <td><button class="btn-cross cour" type="button" name="button">&#10006;</button></td>
+            </tr>
+          </table>
+        <% }); %> 
+    </div>
+
+    <div class="form-group">
+        <button class="new-2" type="button">+</button>
+    </div>
+
+    <div class="form-group">
+      <button type="submit" name="button" class="btn send-2 hidden">Send</button>
+    </div>
+  </form>
+</div>
+
+<%- include("partials/footer3"); -%>

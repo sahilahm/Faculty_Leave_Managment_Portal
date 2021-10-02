@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<%- include("partials/header1"); -%>
+
+<div class="div1">
+  <div class="div11">
+    <h3>Name</h3>
+    <h3>Faculty ID</h3>
+    <h3>Email</h3>
+    <h3>Department</h3>
+    <h3>Designation</h3>
+    <h3>Total number of leave available</h3>
+    <h3>Status</h3>
+  </div>
+  <div class="div11">
+    <h3><%= name %></h3>
+    <h3><%= facultyid %></h3>
+    <h3><%= email %></h3>
+    <h3><%= department %></h3>
+    <h3><%= designation %></h3>
+    <h3><%= tnol %></h3>
+    <h3><%= status %></h3>
+  </div>
+</div>
+<div class="div2"> 
+  <a href="/leaveApplication" class="btn btn-1" type="button" name="button">New leave application</a>
+  <a href="/leaveStatus" class="btn btn-2" type="button" name="button">Status of leave application</a>
+  <br>
+  <a href="/projectApplication" class="btn btn-1" type="button" name="button">Project Assosiate Hiring</a>
+  <a href="/projectDetail" class="btn btn-2" type="button" name="button">Project Detais</a>
+  <% if(type=='Project Instructor' || type=='DSA') { %>
+    <a href= "/hiringApplications" class="btn btn-3" type="button" name="button">Project Applications</a>
+  <%}%>
+  <a href="/myProf" class="btn btn-3" type="button" name="button">Update Profile</a>
+</div>
+<%- include("partials/footer"); -%>

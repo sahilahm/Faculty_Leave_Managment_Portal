@@ -1,0 +1,20 @@
+<!doctype html>
+<%- include("partials/header"); -%>
+
+<main class="form-signin">
+  <form class="form-signin" action="/login" method="POST">
+    <!-- <img class="mb-4" src="images/logo.png" alt="" width="72" height="57"> -->
+    <h1 class="h3 mb-3 fw-normal">Login</h1>
+
+
+    <input type="text" name="facID" class="form-control top" placeholder="Faculty ID" required autofocus>
+    <input type="password" name="pswd" class="form-control bottom" placeholder="Password" required>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+    <p class="mt-5 mb-3 text-muted">&copy; Jatin Gehlot</p>
+  </form>
+</main>
+
+
+
+<%- include("partials/footer"); -%>

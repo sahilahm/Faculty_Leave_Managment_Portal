@@ -1,0 +1,40 @@
+<%- include("partials/header1"); -%>
+
+<div class="table">
+  <h2>Status of Leave Applications</h2>
+  <table id="table-1">
+    <thead>
+      <tr>
+        <th>Application ID</th>
+        <th>Subject</th>
+        <th>Project Assosiate</th>
+        <th>Duration</th>
+        <th>Approval</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% App.forEach(function(item){ %>
+      <tr>
+        <td class="nr"><%= item.hireid %></td>
+        <td><%= item.title %></td>
+        <td><%= item.type %></td>
+        <td><%= item.duration %></td>
+            <% if(item.status ==0) { %>
+            <td>Under PI</td> 
+
+            <% } else if( item.status==1) { %>
+              <td>Under DSA</td>
+              
+            <% } else if( item.status ==2) { %>
+              <td>Approved</td>
+
+            <% } else { %>
+              <td>Rejected</td>
+              <%}%>
+      </tr>
+      <%});%>
+    </tbody>
+  </table>
+</div>
+
+<%- include("partials/footer2"); -%>

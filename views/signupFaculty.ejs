@@ -1,0 +1,34 @@
+<!doctype html>
+<%- include("partials/header"); -%>
+
+<main class="form-signin">
+  <form class="form-signin" action="/signUp" method="POST">
+    <!-- <img class="mb-4" src="images/logo.png" alt="" width="72" height="57"> -->
+    <h1 class="h1 fs-1 mb-3 fw-normal">Sign Up</h1>
+
+    <input type="text" name="name" class="form-control top" placeholder="Name" required autofocus>
+    <input type="email" name="email" class="form-control middle" placeholder="Email" required autofocus>
+    <select class="form-control middle" name="dept" placeholder= "Department" id= "1" required>
+      <option value="" disabled selected hidden>Department</option>
+      <option value="cs">Computer science</option>
+      <option value="ee">Electrical</option>
+      <option value="me">Mechanical</option>
+      <option value="ce">Civil</option>
+    </select>
+    <input type="text" name="Pid" class="form-control top" placeholder="Project ID" autofocus>
+    <select class="form-control middle" name="role" placeholder= "Department" id= "1">
+      <option value="" disabled selected hidden>Role</option>
+      <option value="pi">Project Instructor</option>
+      <option value="copi">CO Project Instructor</option>
+    </select>
+    
+    <input type="password" name="pswd" class="form-control middle" placeholder="Password" required>
+    <input type="password" name="repswd" class="form-control bottom" placeholder="Retype Password" required>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+  </form>
+</main>
+
+
+
+<%- include("partials/footer"); -%>

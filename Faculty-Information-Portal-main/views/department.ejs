@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+
+<% App.forEach(function(item){ %>
+    <h3>Faculty ID :  <%= item.facid %> </h3>
+    <a href="/<%= title %>/<%=item.facname%>"><h2><%= item.facname %></h2></a>
+    <br>
+    <br>
+<% }); %>
+
+<%- include('partials/footer') %>

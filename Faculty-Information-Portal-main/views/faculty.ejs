@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+
+<div class="div1">
+    <center><h1><%= name %></h1></center>
+    <br>
+    <h3>Background</h3>
+    <p><%= back %></p>
+    <br>
+    <h3>Publications</h3>
+    <% pub.forEach(function(item){ %>
+        <p><%= item %></p>
+    <%});%>
+    <br>
+    <h3>Courses</h3>
+    <% courses.forEach(function(item){ %>
+        <p><%= item %></p>
+    <%});%>
+    <br>
+</div>
+
+<%- include('partials/footer') %>

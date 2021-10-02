@@ -1,0 +1,42 @@
+<%- include("partials/header1"); -%>
+
+<div class="table">
+  <h2>Faculty's Leave Application</h2>
+  <table id="table-1">
+    <thead>
+        <tr>
+            <th>Hiring ID</th>
+            <th>Subject</th>
+            <th>Project Assosiate</th>
+            <th>Duration</th>
+            <th>Approval</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% App.forEach(function(item){ %>
+        <% item.forEach(function(items){ %>
+          <tr>
+            <td class="nr"><%= items.hireid %></td>
+            <td><%= items.title %></td>
+            <td><%= items.type %></td>
+            <td><%= items.duration %></td>
+            <td>
+              <% if(items.appstatus==0) { %>
+              <form class="" action="/" method="post">
+                <button class="btn-right use-3" type="button" name="button">&#10004;</button>
+                <button class="btn-cross use-4" type="button" name="button">&#10006;</button>
+              </form>
+              <% } else if(items.appstatus==1) { %>
+                Approved
+              <% } else if(items.appstatus==-1) { %>
+                Rejected
+              <% } %>
+            </td>
+          </tr>
+        <%});%>
+      <%});%>
+    </tbody>
+  </table>
+</div>
+
+<%- include("partials/footer2"); -%>

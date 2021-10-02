@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+<div class="container mt-5">
+  <h1> Appointments</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Makes POST request to /register route -->
+          <form action="/appoint" method="POST">
+            <div class="form-group">
+              <label for="facid"></label>
+              <input type="text" class="form-control" name="fid" placeholder="Faculty ID" required>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control middle" name="dept" placeholder= "Department" required>
+                <option value="" disabled selected hidden>Department</option>
+                <option value="Computer Science">Computer science</option>
+                <option value="Electrical">Electrical</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <select class="form-control middle" name="des" placeholder= "Department"required>
+                <option value="" disabled selected hidden>Designation</option>
+                <option value="HOD">Head of Department</option>
+                <option value="DFA">Dean Faculty Affairs</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Appoint</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+

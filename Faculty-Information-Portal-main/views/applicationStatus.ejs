@@ -1,0 +1,68 @@
+<%- include("partials/header1"); -%>
+
+<div class="table">
+  <h2>Status of Leave Applications</h2>
+  <table id="table-1">
+    <thead>
+      <tr>
+        <th>Application ID</th>
+        <th>Subject</th>
+        <th>Number of days</th>
+        <th>Start Date</th>
+        <th>Status</th>
+        <th>Retrospective Leave</th>
+        <th>See comments</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% App.forEach(function(item){ %>
+        <tr>
+          <td class="nr"><%= item.appid %></td>
+          <td><%= item.title %></td>
+          <td><%= item.nod %></td>
+          <td><%= item.startdate %></td>
+          <% if(item.desig == 'Faculty') { %>
+            <% if(item.appstatus ==0) { %>
+            <td>Under HOD</td> 
+
+            <% } else if( item.appstatus==1) { %>
+              <td>Under DFA</td>
+              
+            <% } else if( item.appstatus ==2) { %>
+              <% if(item.retro==0) { %>
+                <td>Approved</td>
+              <% } else { %>
+                <td>Under Director</td>
+              <%}%>
+
+            <% } else if(item.appstatus ==3) { %>
+                <td>Approved</td>
+            
+            <% } else { %>
+                <td>Rejected</td>
+            <%}%>
+
+          <% } else if(item.desig == 'HOD' || item.desig=='DFA') { %>
+            <% if(item.appstatus ==1) { %>
+              <td>Under Director</td>
+            <% } else if(item.appstatus==2 || item.appstatus==3) { %>
+                <td>Approved</td>
+            <% } else { %>
+                <td>Rejected</td>
+            <% } %>
+          <% } %>   
+
+          <% if(item.retro==0) { %>
+            <td>No</td>
+          <% } else { %>
+            <td>Yes</td>
+          <%}%>
+          
+          <td><button class="use-address" type="button" name="button">See</button></td>
+        </tr>
+      <%});%>
+    </tbody>
+  </table>
+</div>
+
+<%- include("partials/footer2"); -%>

@@ -1,0 +1,35 @@
+<%- include("partials/header1"); -%>
+
+<div class="div1">
+    <h4>Application ID: <%= appid %></h4>
+  <h4>Subject: <%= title %></h4>
+  <br>
+  <h5>Content:</h5>
+  <br>
+  <p><%= content %></p>
+</div>
+<center>
+  <h3>Comment History</h3>
+</center>
+<% App.forEach(function(item) { %>
+<div class="div3">
+  <p><%= item.facname %></p>
+</div>
+<div class="div4">
+  <p><%= item.content %></p>
+</div>
+<% }); %>
+<form class="" action="/comments/<%= appid %>/1" method="post">
+  <div class="form-group">
+    <label for="postTitle">Write comment</label>
+    <br>
+    <input type="text" class="form-control" name="content">
+  </div>
+  <div class="form-group">
+    <center><button type="submit" name="button" class="btn btn-primary ">Send</button></center>
+  </div>
+</form>
+
+
+
+<%- include("partials/footer"); -%>
